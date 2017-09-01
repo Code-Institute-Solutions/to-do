@@ -1,18 +1,13 @@
+[![Build Status](https://travis-ci.org/Code-Institute-Solutions/to-do.svg?branch=master)](https://travis-ci.org/Code-Institute-Solutions/to-do)
+### to-do
+## Stream 3 Project 1
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+#Summary
+Basic Django app to show simple POST and GET
 
+#Testing
+Using Travis for CI
 
-Hi there! Welcome to Cloud9 IDE!
+#Deployment
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
-
-Happy coding!
-The Cloud9 IDE team
+#Demo
