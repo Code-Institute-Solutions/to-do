@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+    <input type="hidden" value="{{ csrf_token }}" name="csrfmiddlewaretoken">
+
+    <fieldset>
+    <p><label for="name">Task name:</label>
+    <input id="name" type="text" name="name"/></p>
+
+    <p><label for="description">Task description:</label>
+    <input id="description" type="text" name="description"/></p>
+
+    <p><label for="status">Status:</label>
+    <input id="status" type="text" name="status"/></p>
+
+    <input type="submit"/>
+    </fieldset>
+</form>
+{% endblock content %}
