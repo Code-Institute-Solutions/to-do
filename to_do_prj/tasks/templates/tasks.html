@@ -6,7 +6,15 @@
     <div>
         <p><strong>{{task.name}}: </strong>{{task.description}}</p>
         <p>Status: {{task.status}}</p>
-        <button class="btn btn-default" onclick="location.href='{% url 'edit_task' task.id %}'">Edit</button>
+        {% if task.status == "Not done" %}
+        <form method="post" action="{% url 'update_status' task.id %}">
+            {% csrf_token %}
+            <label for="status">Mark as:</label>
+            <input type="text" name="status" value="Done" required="required">
+            <input type="submit" value="OK">
+        </form>
+        {% endif %}
+        <button onclick="location.href='{% url 'edit_task' task.id %}'">Edit</button>
     </div>
     {% endfor %}
 <div>
