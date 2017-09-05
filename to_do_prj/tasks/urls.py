@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from tasks.views import get_tasks, task_detail, add_task, edit_task, update_status
+from .views import get_tasks, task_detail, add_task, edit_task, update_status
+
 
 urlpatterns = [
     url(r'^$', get_tasks, name='get_tasks'),
