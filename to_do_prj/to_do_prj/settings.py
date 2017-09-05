@@ -25,7 +25,7 @@ SECRET_KEY = '!8#_=1k7d23zlgjb!&_cg_ous=w9chi7%lwa&!&^eb_*-vf7wo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['to-do-nakitamccool.c9users.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'to-do-nakitamccool.c9users.io']
 
 
 # Application definition
