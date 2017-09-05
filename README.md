@@ -7,7 +7,3 @@ Basic Django app to show simple POST and GET
 
 #Testing
 Using Travis for CI
-
-#Deployment
-
-#Demo
