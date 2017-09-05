@@ -3,7 +3,7 @@
 <h3>{{ task.name }}</h3>
 <div class="row">
         <p>{{ task.description }}</p>
-        <p>{{ task.status }}</p>
+        <p>{{ task.done }}</p>
         <button class="btn btn-default" onclick="location.href='{% url 'get_tasks' %}'">Back To Task List</button>
         <button class="btn btn-default" onclick="location.href='{% url 'edit_task' task.id %}'">Edit</button>
 </div>

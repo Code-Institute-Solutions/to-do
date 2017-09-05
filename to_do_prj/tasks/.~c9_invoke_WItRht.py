@@ -7,7 +7,7 @@ def get_index(request):
 
 
 
-def get_tasks(request):
+
     return render(request, 'tasks.html', {'task_list': Task.objects.all()})
 
 
@@ -36,6 +36,7 @@ def edit_task(request, id):
     if request.method == "POST":
         form = TaskForm(request.POST, request.FILES, instance=task)
         if form.is_valid():
+            task = form.save(commit=False)
             task.save()
             return redirect(task_detail, task.pk)
     else:
@@ -45,7 +46,8 @@ def edit_task(request, id):
 
 def update_status(request, id):
     # A view that handles the form for setting a task as Done
+    status = request.POST['status']
     task = get_object_or_404(Task, pk=id)
-    task.done = not task.done
+    task.status = "Done"
     task.save()
     return redirect(reverse('get_tasks'))

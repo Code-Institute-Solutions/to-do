@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>My tasks</h2>
-<a href="add">Add a task</a>
-<a href="/">Return to homepage</a>
 <div>
     {% for task in task_list %}
     <div>
         <p><strong>{{task.name}}: </strong>{{task.description}}</p>
-        <p>Status: {{task.status}}</p>
+        <p>Done: {{task.done}}</p>
         <!--Provide form to update status if task is not done-->
-        {% if task.status != "Done" %}
         <form method="post" action="{% url 'update_status' task.id %}">
             {% csrf_token %}
-            <label for="status">Mark as:</label>
-            <input type="text" name="status" value="Done" required="required">
-            <input type="submit" value="OK">
+            <input type="submit" value="Toggle Status">
         </form>
-        {% endif %}
         <!--END: Provide form to update status if task is not done-->
         <button onclick="location.href='{% url 'edit_task' task.id %}'">Edit</button>
     </div>
+    {% empty %}
+    <p> Your task list is empty.</p>
     {% endfor %}
+    <p><a href="{% url 'add_task' %}">Add a task</a></p>
 <div>
 {% endblock %}
