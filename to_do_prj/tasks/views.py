@@ -2,10 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Task
 from .forms import TaskForm
 
-def get_index(request):
-    return render(request, 'index.html',)
-
-
 
 def get_tasks(request):
     return render(request, 'tasks.html', {'task_list': Task.objects.all()})
