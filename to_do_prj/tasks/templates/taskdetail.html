@@ -2,9 +2,9 @@
 {% block content %}
 <h3>{{ task.name }}</h3>
 <div class="row">
-        <p>Description: {{ task.description }}</p>
-        <p>Done: {{ task.done }}</p>
-        <button class="btn btn-default" onclick="location.href='{% url 'get_tasks' %}'">Back To Task List</button>
-        <button class="btn btn-default" onclick="location.href='{% url 'edit_task' task.id %}'">Edit</button>
+    <p>Description: {{ task.description }}</p>
+    <p>Done: {{ task.done }}</p>
+    <a href="{% url 'edit_task' task.id %}">Edit</a>
 </div>
+<a href="{% url 'get_tasks' %}">To Task List</a>
 {% endblock %}

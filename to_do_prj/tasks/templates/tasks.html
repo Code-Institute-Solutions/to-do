@@ -6,17 +6,19 @@
     <div>
         <p><strong>{{task.name}}: </strong>{{task.description}}</p>
         <p>Done: {{task.done}}</p>
+
         <!--Provide form to update status if task is not done-->
         <form method="POST" action="{% url 'toggle_status' task.id %}">
             {% csrf_token %}
             <input type="submit" value="Toggle Status">
         </form>
-        <!--END: Provide form to update status if task is not done-->
-        <button onclick="location.href='{% url 'edit_task' task.id %}'">Edit</button>
+
+        <a href="{% url 'edit_task' task.id %}">Edit</a>
     </div>
     {% empty %}
     <p> Your task list is empty.</p>
     {% endfor %}
-    <p><a href="{% url 'add_task' %}">Add a task</a></p>
+    <br>
+    <a href="{% url 'add_task' %}">Add a task</a>
 <div>
 {% endblock %}
