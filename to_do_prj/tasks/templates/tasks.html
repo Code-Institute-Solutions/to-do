@@ -7,7 +7,7 @@
         <p><strong>{{task.name}}: </strong>{{task.description}}</p>
         <p>Done: {{task.done}}</p>
         <!--Provide form to update status if task is not done-->
-        <form method="post" action="{% url 'update_status' task.id %}">
+        <form method="POST" action="{% url 'toggle_status' task.id %}">
             {% csrf_token %}
             <input type="submit" value="Toggle Status">
         </form>

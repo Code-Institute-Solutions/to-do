@@ -39,7 +39,7 @@ def edit_task(request, id):
     return render(request, 'taskform.html', {'form': form})
 
 
-def update_status(request, id):
+def toggle_status(request, id):
     # A view that handles the form for setting a task as Done
     task = get_object_or_404(Task, pk=id)
     task.done = not task.done
